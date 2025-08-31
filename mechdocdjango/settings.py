@@ -90,9 +90,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mechdocdb',
-        'USER':'postgres',
-        'PASSWORD':'123',
-        'HOST':'localhost'
+        'USER':'mechdocdb_user',
+        'PASSWORD':'nVgAad0QHGv7SyRByMbtkS7XIQE6nfjc',
+        'HOST':'dpg-d2q59qd6ubrc73cvrd7g-a',
+        'PORT':'5432',
 
     }
 }
