@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import  os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,10 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-60xcoi&p^@8a4&jpo#c5yt0@+or1(+2!(89#rroii$he9hkwh$'
+SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -96,7 +97,7 @@ DATABASES = {
     }
 }
 AUTH_USER_MODEL = 'authapp.User'
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIAL = True
 from datetime import timedelta
 
 SIMPLE_JWT = {
@@ -107,17 +108,19 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",)
 }
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "http://127.0.0.1:8000"
+    "https://mechdocreact.vercel.app/",
+
+    "https://mechdocdjango.onrender.com"
 ]
 # Cookies
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_CREDENTIALS = [
+    "https://mechdocreact.vercel.app/",
+    "https://mechdocdjango.onrender.com"]
 
 CSRF_COOKIE_SAMESITE = "Lax"
 SESSION_COOKIE_SAMESITE = "Lax"
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 
 # Password validation
