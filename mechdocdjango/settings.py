@@ -108,6 +108,10 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": True,
     "AUTH_HEADER_TYPES": ("Bearer",)
 }
+
+CORS_ALLOWED_ORIGINS = [
+"https://mechdocreact.vercel.app/"
+]
 CSRF_TRUSTED_ORIGINS = [
     "https://mechdocreact.vercel.app/",
 
