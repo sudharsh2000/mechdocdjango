@@ -110,16 +110,16 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-"https://mechdocreact.vercel.app/"
+"https://mechdocreact.vercel.app"
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://mechdocreact.vercel.app/",
+    "https://mechdocreact.vercel.app",
 
     "https://mechdocdjango.onrender.com"
 ]
 # Cookies
 CORS_ALLOWED_CREDENTIALS = [
-    "https://mechdocreact.vercel.app/",
+    "https://mechdocreact.vercel.app",
     "https://mechdocdjango.onrender.com"]
 
 CSRF_COOKIE_SAMESITE = "Lax"
